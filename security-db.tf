@@ -20,8 +20,8 @@ resource "aws_vpc_security_group_ingress_rule" "app_pv_sg_ssh_ingress" {
 resource "aws_vpc_security_group_ingress_rule" "app_pv_sg_mongodb_ingress" {
   description                  = "Acesso ao MongoDB"
   security_group_id            = aws_security_group.app_pv_sg.id
-  from_port                    = 22
-  to_port                      = 22
+  from_port                    = 27017
+  to_port                      = 27017
   ip_protocol                  = "tcp"
   referenced_security_group_id = aws_security_group.app_pub_sg.id
 }
